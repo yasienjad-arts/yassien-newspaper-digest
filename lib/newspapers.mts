@@ -1,13 +1,5 @@
 import type { NewspaperSource } from './headlines.mts'
 
-/**
- * Sources for the daily digest. Several Lebanese newspaper sites sit behind
- * bot-protection (Cloudflare/Sucuri) that blocks even a plain HTTP fetch with
- * no RSS fallback available — those are listed with `homepage` only so
- * fetchSourceHeadlines can try, but they are expected to fail gracefully and
- * be skipped in the digest until a different fetching strategy is adopted.
- * L'Orient-Le Jour is intentionally excluded per project scope.
- */
 export const NEWSPAPERS: NewspaperSource[] = [
   {
     name: 'النهار',
@@ -17,23 +9,33 @@ export const NEWSPAPERS: NewspaperSource[] = [
   {
     name: 'الأخبار',
     homepage: 'https://www.al-akhbar.com/',
+    fallbackRssUrl:
+      'https://news.google.com/rss/search?q=site%3Aal-akhbar.com&hl=ar&gl=LB&ceid=LB%3Aar',
   },
   {
     name: 'الجمهورية',
     homepage: 'https://www.aljoumhouria.com/',
+    fallbackRssUrl:
+      'https://news.google.com/rss/search?q=site%3Aaljoumhouria.com&hl=ar&gl=LB&ceid=LB%3Aar',
   },
   {
     name: 'الديار',
     homepage: 'https://addiyar.com/',
+    fallbackRssUrl:
+      'https://news.google.com/rss/search?q=site%3Aaddiyar.com&hl=ar&gl=LB&ceid=LB%3Aar',
   },
   {
     name: 'نداء الوطن',
     homepage: 'https://www.nidaalwatan.com/',
+    fallbackRssUrl:
+      'https://news.google.com/rss/search?q=site%3Anidaalwatan.com&hl=ar&gl=LB&ceid=LB%3Aar',
   },
   {
     name: 'اللواء',
     homepage: 'https://aliwaa.com.lb/',
     htmlHeadlinePattern: /[؀-ۿ]{6,}/,
+    fallbackRssUrl:
+      'https://news.google.com/rss/search?q=site%3Aaliwaa.com.lb&hl=ar&gl=LB&ceid=LB%3Aar',
   },
   {
     name: 'الشرق',
@@ -43,6 +45,8 @@ export const NEWSPAPERS: NewspaperSource[] = [
   {
     name: 'البناء',
     homepage: 'https://al-binaa.com/',
+    fallbackRssUrl:
+      'https://news.google.com/rss/search?q=site%3Aal-binaa.com&hl=ar&gl=LB&ceid=LB%3Aar',
   },
   {
     name: 'الشرق الأوسط',
