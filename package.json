@@ -1,0 +1,10 @@
+{
+  "name": "yassien-newspaper-digest",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@netlify/functions": "^3.1.10",
+    "fast-xml-parser": "^4.5.3"
+  }
+}
